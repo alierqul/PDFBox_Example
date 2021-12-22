@@ -32,7 +32,7 @@ public class ITextPDFCreation {
     System.out.println("PDF created");
 
     try (FileOutputStream fos = new FileOutputStream(PDF_FILE_PATH)) { // içerik doldurmaca burada
-                                                                       // baþlýyor
+                                                                       // başlıyor
       PdfWriter writer = PdfWriter.getInstance(pdf, fos);
       // writer.setEncryption("gizli".getBytes(), "mizli".getBytes(), PdfWriter.ALLOW_PRINTING,
       // PdfWriter.ENCRYPTION_AES_128);
@@ -40,8 +40,11 @@ public class ITextPDFCreation {
       pdf.open();
       pdf.add(new Paragraph("bir gün okula giderken..."));
       pdf.add(new Paragraph("her şeye dikkat ederken..."));
-      pdf.add(new Paragraph("bir kız çıktı karşýma..."));
-      pdf.add(Image.getInstance(PDF_IMAGE_PATH));
+      pdf.add(new Paragraph("bir kız çıktı karşıma..."));
+      Image img = Image.getInstance(PDF_IMAGE_PATH);
+      img.setAbsolutePosition(450f, 10f);
+      img.scaleToFit(50f, 50f);
+      pdf.add(img);
 
       pdf.addAuthor("Ali ERGÜL");
       pdf.addCreationDate();
