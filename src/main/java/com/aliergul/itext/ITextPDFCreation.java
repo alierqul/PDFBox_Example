@@ -156,7 +156,7 @@ public class ITextPDFCreation {
     pdf.add(new Paragraph("her şeye dikkat ederken...", this.getFont()));
     pdf.add(new Paragraph("bir kız çıktı karşıma...", this.getFont()));
 
-    pdf.addAuthor("Babür Somer");
+    pdf.addAuthor("Ali ERGÜL");
     pdf.addCreationDate();
     pdf.addCreator("Automated creation");
     pdf.addTitle("iText ile PDF dosyasý oluşturma");
